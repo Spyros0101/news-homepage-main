@@ -1,0 +1,320 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+p {
+  font-size: 15px;
+  color: hsl(236, 13%, 42%);
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+
+header, main, footer {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0 40px;
+}
+
+/* header and navigation bar */
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.primary-nav {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.primary-nav a {
+  text-decoration: none;
+  color: hsl(236, 13%, 42%);
+  padding-left: 20px;
+}
+
+/* responsive hamburger menu for nav*/
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: hsl(236, 13%, 42%);
+}
+
+/* main section */
+
+.flex-container {
+  display: flex;
+  width: 100%;
+}
+
+/* left main section */
+
+#left-main {
+  width: 100%;
+  height: 550px;
+  display: flex;
+  flex-wrap: wrap;
+ align-items: flex-start;
+}
+
+#left-main-img {
+  background-image: url(../images/image-web-3-desktop.jpg);
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 60%;
+  display: flex;
+}
+
+#left-main h1 {
+  padding-right: 60px;
+  width: 50%;
+  font-size: 42px;
+  font-weight: 800;
+  margin-top: 20px;
+}
+
+#left-main-text {
+  width: 50%;
+  text-align: justify;
+  margin-top: 20px;
+}
+
+/* button inside left main section */
+
+button {
+  border: none;
+  width: 170px;
+  height: 40px;
+  background-color: hsl(5, 85%, 63%);
+  font-size: 15px;
+  font-weight: 700;
+  color: hsl(36, 100%, 99%);
+  letter-spacing: 2px;
+  margin-top: 83px;
+}
+
+/* right main section */
+
+#right-main {
+  width: 39%;
+  margin-left: 1%;
+  height: 550px;
+  background-color: hsl(240, 100%, 5%);
+  padding: 30px;
+}
+
+#right-main a {
+  color: hsl(36, 100%, 99%);
+  text-decoration: none;
+  padding-bottom: 10px;
+}
+
+#right-main h2 {
+  color: hsl(35, 77%, 62%);
+  font-size: 30px;
+}
+
+.right-main-text {
+  height: 100px;
+  color: hsl(36, 100%, 99%);
+  margin-top: 40px;
+  border-bottom: 1px solid hsl(233, 8%, 79%);
+}
+
+/* footer section */
+
+.footer-content {
+  display: flex;
+  margin-top: 15px;
+}
+
+.footer-text {
+  margin-left: 20px;
+}
+
+footer {
+  width: 100%;
+  margin-top: 50px;
+}
+
+.footer-text h2 {
+  color: hsl(233, 8%, 79%);
+  margin-bottom: 10px;
+}
+
+.footer-text a {
+  color: hsl(240, 100%, 5%);
+  text-decoration: none;
+}
+
+.footer-text span {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.footer-text p {
+  margin-top: 20px
+}
+
+/* hoover styles */
+
+button:hover {
+  cursor: pointer;
+  background-color: hsl(240, 100%, 5%);
+  transition: 0.3s;
+}
+
+#right-main a:hover {
+  color: hsl(35, 77%, 62%);
+  transition: 0.3s;
+}
+
+.footer-text a:hover, .nav-item a:hover {
+  color: hsl(5, 85%, 63%);
+  transition: 0.3s;
+}
+
+
+
+
+/* responsive styles */
+
+@media screen and (max-width: 1048px) {
+  
+  /* main and footer flex container */
+
+  .flex-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* left main responsive styles */
+
+  #left-main {
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+
+  #left-main-text {
+    width: 100%;
+  }
+
+  #left-main h1 {
+    font-size: 32px;
+    width: 100%;
+    align-self: center;
+  }
+ 
+  /* right main responsive styles */
+ 
+  #right-main {
+    width: 100%;
+    margin-top: 100px;
+  }
+
+  /* button responsive styles */
+
+  button {
+    margin-top: 10px;
+  }
+
+  /* footer responsive styles */
+
+  .footer-content {
+    align-self: flex-start;
+    justify-content: center;
+  }
+
+  /* nav bar and hamburger responsive styles */
+  
+  .hamburger {
+    display: block;
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+    background-color: #fff;
+  }
+
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+    background-color: #fff;
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+    background-color: #fff;
+  }
+
+  .primary-nav {
+    position: fixed;
+    left: -100%;
+    gap: 0;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.87);
+    text-align: center;
+    transition: 0.3s;
+    width: 100%;
+    top: 0;
+  }
+
+  .primary-nav a {
+    color: white;
+  }
+
+  .nav-item {
+    margin: 16px 0;
+  }
+
+  .primary-nav.active {
+    left: 0;
+  }
+
+}
+
+@media screen and (max-width: 542px) {
+
+  /* left main responsive styles */
+
+  #left-main h1 {
+    width: 80%;
+    padding: 0;
+  }
+
+  /* right main responsive styles */
+
+  #right-main p {
+    font-size: 14px;
+  }
+
+  #right-main h3 {
+    font-size: 16px;
+  }
+
+  .footer-text p {
+    margin-top: 5px
+  }
+
+}
